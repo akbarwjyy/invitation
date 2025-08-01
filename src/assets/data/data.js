@@ -75,9 +75,9 @@ export const data = {
   bank: [
     {
       id: 1,
-      name: "Rika",
-      icon: "./src/assets/images/bca.png",
-      rekening: "12345678",
+      name: "Rika Pratiwi",
+      icon: "./src/assets/images/bni.png",
+      rekening: "0905788492",
     },
     {
       id: 2,

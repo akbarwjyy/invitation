@@ -36,7 +36,10 @@ export const wishas = () => {
     const wishasBank = wishasContainer.children[1];
     const [_, __, containerBank] = wishasBank.children;
 
-    renderElement(data.bank, containerBank, listItemBank);
+    // Hanya menampilkan card bank pertama (index 0)
+    const singleBankData = [data.bank[0]];
+
+    renderElement(singleBankData, containerBank, listItemBank);
 
     containerBank.querySelectorAll("button").forEach((button) => {
       button.addEventListener("click", async (e) => {

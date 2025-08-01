@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Modify HTML Structure",
+      "type": "shell",
+      "command": "Get-Content -Path \"${workspaceFolder}\\index.html\" | ForEach-Object { $_ -replace '(?s)<section class=\"bride\".*?</section>\\s*\\n\\s*(<section class=\"hadist\")', '$1' } | Set-Content -Path \"${workspaceFolder}\\index.html.tmp\"; Move-Item -Path \"${workspaceFolder}\\index.html.tmp\" -Destination \"${workspaceFolder}\\index.html\" -Force",
+      "group": "build",
+      "isBackground": false
+    }
+  ]
+}
