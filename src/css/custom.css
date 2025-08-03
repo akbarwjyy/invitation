@@ -65,5 +65,33 @@
   animation: slowRotate 2s infinite;
   cursor: pointer;
   color: #6db5d9 !important; /* Warna sedikit lebih gelap saat hover */
-  filter: drop-shadow(0 0 8px rgba(142, 202, 230, 0.6)); /* Efek cahaya lebih kuat saat hover */
+  filter: drop-shadow(
+    0 0 8px rgba(142, 202, 230, 0.6)
+  ); /* Efek cahaya lebih kuat saat hover */
+}
+
+/* Tambahkan CSS berikut untuk menyembunyikan gambar tetapi mempertahankan struktur */
+.welcome figure {
+  height: 150px; /* Sesuaikan dengan tinggi foto sebelumnya */
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome figure img {
+  display: none; /* Menyembunyikan gambar */
+}
+
+/* Tambahan untuk mempertahankan tinggi section home tanpa foto */
+.home figure {
+  height: 150px; /* Sesuaikan dengan tinggi foto sebelumnya */
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home figure img {
+  display: none; /* Menyembunyikan gambar jika ada */
 }
