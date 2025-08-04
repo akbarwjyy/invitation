@@ -99,22 +99,10 @@ export const data = {
       path: "#home",
     },
     {
-      id: 2,
-      teks: "Mempelai",
-      icon: "bx bxs-group",
-      path: "#bride",
-    },
-    {
       id: 3,
       teks: "Tanggal",
       icon: "bx bxs-calendar-check",
       path: "#time",
-    },
-    {
-      id: 4,
-      teks: "Galeri",
-      icon: "bx bxs-photo-album",
-      path: "#",
     },
     {
       id: 5,
