@@ -95,3 +95,46 @@
 .home figure img {
   display: none; /* Menyembunyikan gambar jika ada */
 }
+
+/* Media queries untuk tampilan responsif pada perangkat mobile */
+@media (max-width: 768px) {
+  /* Ubah ukuran ikon bunga agar proporsional di layar kecil */
+  .hadist i.bxs-spa,
+  .cerita i.bxs-spa,
+  .time a + p + i.bxs-spa {
+    font-size: 2.5rem;
+    transform: scale(1);
+  }
+
+  /* Sesuaikan posisi ikon bunga di setiap section */
+  .hadist i.bxs-spa {
+    top: 12rem;
+    left: 1.5rem;
+  }
+
+  .cerita i.bxs-spa {
+    bottom: 3rem;
+    right: 1.5rem;
+  }
+
+  .time a + p + i.bxs-spa {
+    right: 1.5rem;
+    top: 15rem;
+  }
+}
+
+/* Untuk perangkat dengan layar sangat kecil */
+@media (max-width: 480px) {
+  .hadist i.bxs-spa,
+  .cerita i.bxs-spa,
+  .time a + p + i.bxs-spa {
+    font-size: 2rem;
+  }
+
+  /* Animasi lebih sederhana untuk performa lebih baik di perangkat mobile */
+  .hadist i.bxs-spa,
+  .cerita i.bxs-spa,
+  .time a + p + i.bxs-spa {
+    animation: upAndDown 3s infinite;
+  }
+}
