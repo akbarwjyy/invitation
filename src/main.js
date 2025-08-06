@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   welcome();
   navbar();
   home();
-  // bride();
+  bride();
   time();
   // galeri();
   wishas();

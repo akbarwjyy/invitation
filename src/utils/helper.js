@@ -19,8 +19,28 @@ export const generateRandomColor = () => {
 };
 
 export const renderElement = (data, element, listItem) => {
-  element.innerHTML = "";
-  data.map((data) => (element.innerHTML += listItem(data)));
+  // Check if element exists
+  if (!element) {
+    console.error("Target element is null or undefined");
+    return;
+  }
+
+  // Check if data is valid
+  if (!data || !Array.isArray(data) || data.length === 0) {
+    console.error("Data is invalid or empty:", data);
+    return;
+  }
+
+  try {
+    element.innerHTML = "";
+    data.forEach((item) => {
+      if (item) {
+        element.innerHTML += listItem(item);
+      }
+    });
+  } catch (error) {
+    console.error("Error rendering elements:", error);
+  }
 };
 
 export const addClassElement = (element, newClass) => {

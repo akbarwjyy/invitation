@@ -96,6 +96,99 @@
   display: none; /* Menyembunyikan gambar jika ada */
 }
 
+/* Styling untuk section Bride tanpa foto */
+.bride {
+  position: relative;
+  padding: 3rem 1rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.bride h2 {
+  font-family: var(--arabic);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.bride h3 {
+  font-family: var(--josefin);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.bride p {
+  max-width: 80%;
+  margin: 0 auto 2rem;
+  line-height: 1.7rem;
+}
+
+.bride .bride_couple {
+  margin: 2rem auto;
+  max-width: 90%;
+}
+
+.bride .bride_couple ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Styling untuk nama pengantin */
+.bride .bride_couple ul li .bride-name {
+  font-family: var(--sacramento);
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+.bride .bride_couple ul li p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* Styling untuk ikon bunga di section bride */
+.bride i.bxs-spa {
+  position: absolute;
+  color: #8ecae6 !important;
+  font-size: 2.5rem;
+  animation: upAndDown 3s infinite, flowerBloom 5s infinite;
+  z-index: 5;
+}
+
+/* Posisi setiap ikon bunga */
+.bride i.bxs-spa:nth-child(4) {
+  top: 5rem;
+  left: 2rem;
+}
+
+.bride i.bxs-spa:nth-child(5) {
+  bottom: 10rem;
+  right: 2rem;
+  animation-delay: 0.5s;
+}
+
+.bride i.bxs-spa:nth-child(6) {
+  top: 50%;
+  left: 5%;
+  animation-delay: 0.3s;
+}
+
+.bride i.bxs-spa:nth-child(7) {
+  top: 30%;
+  right: 5%;
+  animation-delay: 0.7s;
+}
+
+.bride i.bxs-spa:nth-child(8) {
+  bottom: 5rem;
+  left: 3rem;
+  animation-delay: 0.2s;
+}
+
 /* Media queries untuk tampilan responsif pada perangkat mobile */
 @media (max-width: 768px) {
   /* Ubah ukuran ikon bunga agar proporsional di layar kecil */
@@ -120,6 +213,59 @@
   .time a + p + i.bxs-spa {
     right: 1.5rem;
     top: 15rem;
+  }
+
+  /* Responsif untuk section bride di mobile */
+  .bride h2 {
+    font-size: 1.8rem;
+  }
+
+  .bride h3 {
+    font-size: 1.3rem;
+  }
+
+  .bride p {
+    max-width: 95%;
+    font-size: 0.95rem;
+  }
+
+  /* Styling responsif untuk nama pengantin di mobile */
+  .bride .bride_couple ul li .bride-name {
+    font-size: 2rem;
+  }
+
+  .bride .bride_couple ul li p {
+    font-size: 0.9rem;
+  }
+
+  /* Sesuaikan posisi ikon bunga di section bride untuk mobile */
+  .bride i.bxs-spa {
+    font-size: 2rem;
+  }
+
+  .bride i.bxs-spa:nth-child(4) {
+    top: 3rem;
+    left: 1rem;
+  }
+
+  .bride i.bxs-spa:nth-child(5) {
+    bottom: 8rem;
+    right: 1rem;
+  }
+
+  .bride i.bxs-spa:nth-child(6) {
+    top: 50%;
+    left: 2%;
+  }
+
+  .bride i.bxs-spa:nth-child(7) {
+    top: 25%;
+    right: 2%;
+  }
+
+  .bride i.bxs-spa:nth-child(8) {
+    bottom: 3rem;
+    left: 1.5rem;
   }
 }
 
