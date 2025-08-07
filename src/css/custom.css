@@ -83,6 +83,65 @@
   display: none; /* Menyembunyikan gambar */
 }
 
+/* Styling untuk elemen transisi antar section */
+.section-transition {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin-top: 2rem;
+  margin-bottom: -50px;
+  overflow: hidden;
+}
+
+.section-transition svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Tambahkan CSS berikut untuk mengurangi jarak antara section bride dan time */
+.bride {
+  padding-bottom: 1rem; /* Mengurangi padding bawah lebih banyak */
+  min-height: auto; /* Mengubah min-height agar tidak terlalu tinggi */
+}
+
+.time {
+  padding-top: 2rem; /* Mengurangi padding atas lebih banyak */
+  margin-top: 0;
+  min-height: auto; /* Mengubah min-height agar tidak terlalu tinggi */
+  background-color: #f8f9fa; /* Memberikan background color yang sama dengan transisi */
+}
+
+/* Styling untuk ikon bunga di section bride */
+.bride i.bxs-spa {
+  position: absolute;
+  color: #8ecae6 !important;
+  font-size: 2.5rem;
+  animation: upAndDown 3s infinite, flowerBloom 5s infinite;
+  z-index: 5;
+}
+
+/* Posisi masing-masing ikon bunga */
+.bride i.bxs-spa:nth-of-type(1) {
+  bottom: 2rem;
+  left: 40%;
+  animation-delay: 0.2s;
+}
+
+.bride i.bxs-spa:nth-of-type(2) {
+  bottom: 2rem;
+  left: 50%;
+  animation-delay: 0.5s;
+}
+
+.bride i.bxs-spa:nth-of-type(3) {
+  bottom: 2rem;
+  left: 60%;
+  animation-delay: 0.3s;
+}
+
 /* Tambahan untuk mempertahankan tinggi section home tanpa foto */
 .home figure {
   height: 150px; /* Sesuaikan dengan tinggi foto sebelumnya */
@@ -123,8 +182,22 @@
 }
 
 .bride .bride_couple {
-  margin: 2rem auto;
+  margin: 1rem auto 4rem;
   max-width: 90%;
+  position: relative;
+  padding-top: 1.5rem;
+}
+
+/* Tambahkan efek dekoratif dengan border sederhana */
+.bride .bride_couple::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 1px;
+  background: rgba(142, 202, 230, 0.5);
 }
 
 .bride .bride_couple ul {
@@ -133,6 +206,8 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 /* Styling untuk nama pengantin */
@@ -142,12 +217,29 @@
   font-weight: 400;
   margin-bottom: 1rem;
   color: #212529;
+  position: relative;
+  display: inline-block;
+}
+
+.bride .bride_couple ul li .bride-name::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 2px;
+  background: #8ecae6;
+  border-radius: 2px;
 }
 
 .bride .bride_couple ul li p {
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 1rem;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Styling untuk ikon bunga di section bride */
@@ -234,6 +326,10 @@
     font-size: 2rem;
   }
 
+  .bride .bride_couple ul li .bride-name i {
+    font-size: 1.2rem !important;
+  }
+
   .bride .bride_couple ul li p {
     font-size: 0.9rem;
   }
@@ -243,33 +339,45 @@
     font-size: 2rem;
   }
 
-  .bride i.bxs-spa:nth-child(4) {
-    top: 3rem;
-    left: 1rem;
+  /* Sesuaikan posisi ikon bunga di akhir section bride */
+  .bride i.bxs-spa:nth-of-type(1) {
+    bottom: 1rem;
+    left: 30%;
   }
 
-  .bride i.bxs-spa:nth-child(5) {
-    bottom: 8rem;
-    right: 1rem;
+  .bride i.bxs-spa:nth-of-type(2) {
+    bottom: 1rem;
+    left: 50%;
   }
 
-  .bride i.bxs-spa:nth-child(6) {
-    top: 50%;
-    left: 2%;
+  .bride i.bxs-spa:nth-of-type(3) {
+    bottom: 1rem;
+    left: 70%;
   }
 
-  .bride i.bxs-spa:nth-child(7) {
-    top: 25%;
-    right: 2%;
+  /* Responsif bride_couple untuk mobile */
+  .bride .bride_couple {
+    margin: 1rem auto 3rem;
   }
 
-  .bride i.bxs-spa:nth-child(8) {
-    bottom: 3rem;
-    left: 1.5rem;
+  .bride .bride_couple ul li p {
+    max-width: 95%;
   }
-}
 
-/* Untuk perangkat dengan layar sangat kecil */
+  /* Responsif untuk transisi antar section di mobile */
+  .section-transition {
+    height: 30px;
+    margin-bottom: -30px;
+  }
+
+  .bride {
+    padding: 6rem 1rem 1rem;
+  }
+
+  .time {
+    padding: 2rem 1rem 6rem;
+  }
+} /* Untuk perangkat dengan layar sangat kecil */
 @media (max-width: 480px) {
   .hadist i.bxs-spa,
   .cerita i.bxs-spa,
@@ -282,5 +390,14 @@
   .cerita i.bxs-spa,
   .time a + p + i.bxs-spa {
     animation: upAndDown 3s infinite;
+  }
+
+  /* Penyesuaian posisi ikon bunga dekoratif di bride_couple */
+  .bride_couple i.bxs-spa:first-of-type {
+    left: 20% !important;
+  }
+
+  .bride_couple i.bxs-spa:nth-of-type(2) {
+    right: 20% !important;
   }
 }

@@ -12,7 +12,11 @@ export const bride = () => {
 
   const brideListItem = (data) =>
     `<li data-aos="zoom-in" data-aos-duration="1000">
-              <h3 class="bride-name">${data.name}</h3>
+              <h3 class="bride-name">
+                <i class="bx bxs-spa" style="color: #8ecae6; font-size: 1.5rem; margin-right: 10px; vertical-align: middle;" aria-hidden="true"></i>
+                ${data.name}
+                <i class="bx bxs-spa" style="color: #8ecae6; font-size: 1.5rem; margin-left: 10px; vertical-align: middle;" aria-hidden="true"></i>
+              </h3>
               <p>${data.child} <br>dari <br> Bapak ${data.father} & Ibu ${
       data.mother
     }</p>
