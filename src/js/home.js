@@ -3,8 +3,19 @@ import { monthNameToNumber } from "../utils/helper.js";
 
 export const home = () => {
   const homeContainer = document.querySelector(".home");
-  const [_, figureElement, timeElement, homeTime, calendarAnchor] =
-    homeContainer.children;
+
+  // Seleksi elemen-elemen yang dibutuhkan dengan cara yang lebih robust
+  const figureElement = homeContainer.querySelector("figure");
+  const timeElement = homeContainer.querySelector("h3");
+  const homeTime = homeContainer.querySelector(".home-time");
+  const calendarAnchor = homeContainer.querySelector("a[role='link']");
+
+  console.log("Elements selected:", {
+    figure: figureElement,
+    timeElement: timeElement,
+    homeTime: homeTime,
+    calendarAnchor: calendarAnchor,
+  });
 
   const generateFigureContent = ({ bride }) => {
     const {
@@ -45,9 +56,21 @@ export const home = () => {
                 </div>`;
   };
 
-  const updateCountdown = (endTime, homeTime) => {
+  let intervalId = null;
+
+  const updateCountdown = () => {
+    console.log("Updating countdown, homeTime element:", homeTime);
+    const { year, month, date } = data.time.marriage;
+    const endTimeString = `${String(year)}-${String(
+      monthNameToNumber(month)
+    ).padStart(2, "0")}-${String(date).padStart(2, "0")}T00:00:00`;
+    console.log("End time string:", endTimeString);
+    const endTime = new Date(endTimeString);
+    console.log("End time:", endTime);
+
     const now = new Date().getTime();
     const distance = endTime - now;
+    console.log("Distance:", distance, "ms");
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor(
@@ -55,10 +78,12 @@ export const home = () => {
     );
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    console.log("Countdown values:", { days, hours, minutes, seconds });
 
     if (distance < 0) {
       clearInterval(intervalId);
       homeTime.innerHTML = generateCountdownMarkup(0, 0, 0, 0);
+      console.log("Countdown finished");
     } else {
       homeTime.innerHTML = generateCountdownMarkup(
         days,
@@ -66,20 +91,8 @@ export const home = () => {
         minutes,
         seconds
       );
+      console.log("Updated countdown HTML");
     }
-  };
-
-  const startCountdown = (homeTime, timeData) => {
-    const { year, month, date } = timeData.marriage;
-    const endTime = new Date(
-      `${String(year)}-${String(monthNameToNumber(month)).padStart(
-        2,
-        "0"
-      )}-${String(date).padStart(2, "0")}T00:00:00`
-    );
-
-    updateCountdown(endTime, homeTime);
-    setInterval(() => updateCountdown(endTime, homeTime), 1000);
   };
 
   const initializeHome = () => {
@@ -87,7 +100,16 @@ export const home = () => {
     figureElement.innerHTML = generateFigureContent({ bride });
     timeElement.innerHTML = generateTimeContent({ time });
     calendarAnchor.href = link.calendar;
-    startCountdown(homeTime, time);
+
+    // Update countdown immediately
+    updateCountdown();
+
+    // Clear any existing interval
+    if (intervalId) {
+      clearInterval(intervalId);
+    }
+    // Start a new interval and save the ID
+    intervalId = setInterval(updateCountdown, 1000);
   };
 
   initializeHome();

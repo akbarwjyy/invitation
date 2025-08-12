@@ -51,6 +51,14 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  min-height: 60px;
+  border: 1px solid rgba(142, 202, 230, 0.3);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px auto;
+  width: 80%;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .home .home-time div {
