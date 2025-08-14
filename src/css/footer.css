@@ -1,45 +1,114 @@
 footer {
-    margin-top: 6rem;
-    width: 100%;
-    padding: 4rem 8rem;
-    text-align: center;
+  margin-top: 6rem;
+  width: 100%;
+  padding: 4rem 8rem;
+  text-align: center;
 }
 
 footer h2 {
-    font-size: var(--fontSize-heading-base);
-    font-family: var(--sacramento);
-    font-weight: 400;
-    margin-top: 1rem;
+  font-size: var(--fontSize-heading-base);
+  font-family: var(--sacramento);
+  font-weight: 400;
+  margin-top: 1rem;
 }
 
 footer h4 {
-    font-size: 1.6rem;
-    font-family: var(--arabic);
-    font-weight: 400;
+  font-size: 1.6rem;
+  font-family: var(--arabic);
+  font-weight: 400;
 }
 
 footer > div {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid #000;
-    margin-top: 1rem;
-    padding-top: 0.6rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #000;
+  margin-top: 1rem;
+  padding-top: 0.6rem;
 }
 
 footer > div p {
-    font-size: 0.6rem;
+  font-size: 0.6rem;
 }
 
 footer > div p span {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 footer > div a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 0.8rem;
+}
+
+/* Media queries untuk responsive */
+@media (max-width: 768px) {
+  footer {
+    margin-top: 4rem;
+    padding: 3rem 2rem;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
+
+  footer h2 {
+    font-size: 1.8rem;
+  }
+
+  footer h4 {
+    font-size: 1.3rem;
+  }
+
+  footer > div {
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+  }
+
+  footer > div p {
+    font-size: 0.7rem;
+  }
+
+  footer > div a {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    margin-top: 3rem;
+    padding: 2rem 1rem;
+  }
+
+  footer p {
+    font-size: 0.85rem;
+    line-height: 1.4rem;
+    padding: 0 0.5rem;
+  }
+
+  footer h2 {
+    font-size: 1.4rem;
+  }
+
+  footer h4 {
+    font-size: 1.1rem;
+  }
+
+  footer > div p {
+    font-size: 0.6rem;
+  }
+
+  footer > div a {
+    font-size: 0.6rem;
+    gap: 0.3rem;
+  }
+
+  footer > div a i {
     font-size: 0.8rem;
+  }
 }

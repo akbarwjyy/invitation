@@ -91,3 +91,57 @@ p {
     transform: translateY(0.8rem);
   }
 }
+
+/* Responsive font sizes */
+@media (max-width: 768px) {
+  :root {
+    --fontSize-heading-lg: 2.5rem;
+    --fontSize-heading-base: 2.2rem;
+    --fontSize-text-base: 0.95rem;
+  }
+
+  .audio button {
+    right: 0.8rem;
+    bottom: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --fontSize-heading-lg: 2rem;
+    --fontSize-heading-base: 1.8rem;
+    --fontSize-text-base: 0.9rem;
+  }
+
+  p {
+    line-height: 1.5rem;
+  }
+
+  .audio button {
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 1rem;
+    right: 0.5rem;
+    bottom: 3.5rem;
+  }
+}
+
+/* Base responsive utilities */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+}

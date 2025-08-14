@@ -86,3 +86,39 @@
 .welcome button i {
   font-size: 1.2rem;
 }
+
+/* Media queries untuk responsive */
+@media (max-width: 768px) {
+  .welcome h2 {
+    font-size: 2rem;
+  }
+
+  .welcome figure h1 {
+    font-size: 2.5rem !important;
+  }
+
+  .welcome button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome h2 {
+    font-size: 1.6rem;
+  }
+
+  .welcome figure h1 {
+    font-size: 2rem !important;
+    margin: 1.5rem 0 !important;
+  }
+
+  .welcome button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .welcome button i {
+    font-size: 1rem;
+  }
+}

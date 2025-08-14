@@ -95,6 +95,17 @@
   bottom: 6rem;
 }
 
+/* Ikon bunga yang dipindahkan dari bride_couple ke section bride */
+.bride i:nth-of-type(6) {
+  top: 12rem;
+  left: 2rem;
+}
+
+.bride i:nth-of-type(7) {
+  top: 18rem;
+  right: 2rem;
+}
+
 .hadist {
   width: 100%;
   padding: 4rem 8rem;
@@ -134,4 +145,196 @@
 
 .hadist svg:nth-of-type(2) {
   bottom: -15rem;
+}
+
+/* Media queries untuk responsive */
+@media (max-width: 768px) {
+  .bride {
+    padding: 6rem 2rem;
+  }
+
+  .bride h2 {
+    font-size: 1.4rem;
+  }
+
+  .bride h3 {
+    font-size: 2rem;
+  }
+
+  .bride p {
+    font-size: 0.95rem;
+    line-height: 1.6rem;
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .bride .bride_couple {
+    margin-top: 3rem;
+  }
+
+  .bride i:nth-of-type(1) {
+    top: 8rem;
+    right: 2rem;
+    font-size: 2.5rem;
+  }
+
+  .bride i:nth-of-type(2) {
+    left: 2rem;
+    top: 16rem;
+    font-size: 2.5rem;
+  }
+
+  .bride i:nth-of-type(3) {
+    top: 35rem;
+    right: 2rem;
+    font-size: 2.5rem;
+  }
+
+  .bride i:nth-of-type(4) {
+    top: 40rem;
+    left: 2rem;
+    font-size: 2.5rem;
+  }
+
+  .bride i:nth-of-type(5) {
+    right: 2rem;
+    bottom: 4rem;
+    font-size: 2.5rem;
+  }
+
+  /* Responsive untuk ikon bunga yang dipindahkan */
+  .bride i:nth-of-type(6) {
+    top: 8rem;
+    left: 1.5rem;
+    font-size: 2.5rem;
+  }
+
+  .bride i:nth-of-type(7) {
+    top: 12rem;
+    right: 1.5rem;
+    font-size: 2.5rem;
+  }
+
+  /* Hadist section responsive */
+  .hadist {
+    padding: 3rem 2rem;
+  }
+
+  .hadist h2 {
+    font-size: 2rem;
+  }
+
+  .hadist p {
+    font-size: 0.95rem;
+    line-height: 1.6rem;
+    padding: 1.5rem;
+  }
+
+  .hadist p span {
+    font-size: 1rem;
+  }
+
+  .hadist svg:nth-of-type(1) {
+    top: -6rem;
+  }
+
+  .hadist svg:nth-of-type(2) {
+    bottom: -10rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bride {
+    padding: 4rem 1rem;
+  }
+
+  .bride h2 {
+    font-size: 1.2rem;
+  }
+
+  .bride h3 {
+    font-size: 1.6rem;
+  }
+
+  .bride p {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    max-width: 98%;
+  }
+
+  .bride .bride_couple {
+    margin-top: 2rem;
+    padding-top: 1rem;
+  }
+
+  .bride i:nth-of-type(1) {
+    top: 6rem;
+    right: 1rem;
+    font-size: 2rem;
+  }
+
+  .bride i:nth-of-type(2) {
+    left: 1rem;
+    top: 12rem;
+    font-size: 2rem;
+  }
+
+  .bride i:nth-of-type(3) {
+    top: 28rem;
+    right: 1rem;
+    font-size: 2rem;
+  }
+
+  .bride i:nth-of-type(4) {
+    top: 32rem;
+    left: 1rem;
+    font-size: 2rem;
+  }
+
+  .bride i:nth-of-type(5) {
+    right: 1rem;
+    bottom: 3rem;
+    font-size: 2rem;
+  }
+
+  /* Responsive untuk ikon bunga yang dipindahkan */
+  .bride i:nth-of-type(6) {
+    top: 6rem;
+    left: 1rem;
+    font-size: 2rem;
+  }
+
+  .bride i:nth-of-type(7) {
+    top: 10rem;
+    right: 1rem;
+    font-size: 2rem;
+  }
+
+  /* Hadist section responsive untuk mobile */
+  .hadist {
+    padding: 2rem 1rem;
+  }
+
+  .hadist h2 {
+    font-size: 1.6rem;
+  }
+
+  .hadist p {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    padding: 1rem;
+  }
+
+  .hadist p span {
+    font-size: 0.95rem;
+    margin-top: 0.8rem;
+  }
+
+  .hadist svg:nth-of-type(1) {
+    top: -4rem;
+  }
+
+  .hadist svg:nth-of-type(2) {
+    bottom: -6rem;
+  }
 }

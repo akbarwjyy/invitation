@@ -114,3 +114,95 @@
   bottom: -14rem;
   z-index: -10;
 }
+
+/* Media queries untuk responsive */
+@media (max-width: 768px) {
+  .home {
+    padding: 4rem 2rem;
+  }
+
+  .home h2 {
+    font-size: 2rem;
+  }
+
+  .home figure div {
+    font-size: 1.6rem !important;
+    padding: 1rem 2rem !important;
+  }
+
+  .home .home-time {
+    width: 90%;
+    padding: 8px;
+    margin: 8px auto;
+  }
+
+  .home .home-time div {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .home .home-time div p {
+    font-size: 0.7rem;
+  }
+
+  .home .home-time div p span {
+    font-size: 0.5rem;
+  }
+
+  .home a {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .home svg {
+    bottom: -8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 3rem 1rem;
+  }
+
+  .home h2 {
+    font-size: 1.8rem;
+  }
+
+  .home figure div {
+    font-size: 1.4rem !important;
+    padding: 0.8rem 1.5rem !important;
+  }
+
+  .home .home-time {
+    width: 95%;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .home .home-time div {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .home .home-time div p {
+    font-size: 0.6rem;
+  }
+
+  .home .home-time div p span {
+    font-size: 0.4rem;
+  }
+
+  .home a {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .home .scroll_down {
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .home svg {
+    bottom: -6rem;
+  }
+}

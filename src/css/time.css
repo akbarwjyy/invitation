@@ -1,50 +1,110 @@
 .time {
-    width: 100%;
-    min-height: 100vh;
-    text-align: center;
-    padding: 10rem 8rem;
-    position: relative;
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  padding: 10rem 8rem;
+  position: relative;
 }
 
 .time h2 {
-    font-family: var(--sacramento);
-    font-size: var(--fontSize-heading-base);
-    font-weight: 400;
+  font-family: var(--sacramento);
+  font-size: var(--fontSize-heading-base);
+  font-weight: 400;
 }
 
 .time div:nth-of-type(1) {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 .time div:nth-of-type(1) div h3 {
-    font-family: var(--sacramento);
-    font-size: var(--fontSize-heading-lg);
-    font-weight: 400;
+  font-family: var(--sacramento);
+  font-size: var(--fontSize-heading-lg);
+  font-weight: 400;
 }
 
-.time div:nth-of-type(1) div:nth-of-type(2){
-    margin-top: 2rem;
+.time div:nth-of-type(1) div:nth-of-type(2) {
+  margin-top: 2rem;
 }
 
 .time a {
-    padding: 0.5rem 1rem;
-    color: #fff;
-    font-size: 1rem;
-    background-color: #000;
-    margin: 2rem auto 1rem;
-    border-radius: 20px;
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-size: 1rem;
+  background-color: #000;
+  margin: 2rem auto 1rem;
+  border-radius: 20px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .time a i {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .time a + p + i {
-    right: 8rem;
-    top: 22rem;
+  right: 8rem;
+  top: 22rem;
+}
+
+/* Media queries untuk responsive */
+@media (max-width: 768px) {
+  .time {
+    padding: 6rem 2rem 8rem;
+  }
+
+  .time h2 {
+    font-size: 2rem;
+  }
+
+  .time div:nth-of-type(1) div h3 {
+    font-size: 1.8rem;
+  }
+
+  .time a {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    margin: 1.5rem auto 1rem;
+  }
+
+  .time p {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .time {
+    padding: 4rem 1rem 6rem;
+  }
+
+  .time h2 {
+    font-size: 1.6rem;
+  }
+
+  .time div:nth-of-type(1) div h3 {
+    font-size: 1.4rem;
+  }
+
+  .time a {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    margin: 1rem auto 0.5rem;
+  }
+
+  .time p {
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+    line-height: 1.5rem;
+  }
+
+  .time div:nth-of-type(1) {
+    margin-top: 1.5rem;
+  }
+
+  .time div:nth-of-type(1) div:nth-of-type(2) {
+    margin-top: 1.5rem;
+  }
 }

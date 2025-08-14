@@ -883,6 +883,19 @@ section::after {
   }
 
   /* Adjust decorative flower positions */
+  .bride_couple .bride-flower-left {
+    left: 5% !important;
+    top: -40px !important;
+    font-size: 1rem !important;
+  }
+
+  .bride_couple .bride-flower-right {
+    right: 5% !important;
+    top: -40px !important;
+    font-size: 1rem !important;
+  }
+
+  /* Legacy support untuk ikon lama */
   .bride_couple i.bxs-spa:first-of-type {
     left: 20% !important;
   }
@@ -900,6 +913,25 @@ section::after {
   .islamic-pattern,
   .floral-corner {
     transform: scale(0.7);
+  }
+
+  /* Extra responsive styling untuk bride_couple icons */
+  .bride_couple .bride-flower-left {
+    left: 1% !important;
+    top: -35px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .bride_couple .bride-flower-right {
+    right: 1% !important;
+    top: -35px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .bride .bride_couple {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    position: relative;
   }
 }
 
@@ -1970,10 +2002,33 @@ section {
   /* Responsif bride_couple untuk mobile */
   .bride .bride_couple {
     margin: 1rem auto 3rem;
+    padding-top: 1.5rem;
   }
 
   .bride .bride_couple ul li p {
     max-width: 95%;
+  }
+
+  /* Responsive styling untuk section cerita */
+  .cerita {
+    padding: 3rem 1.5rem;
+  }
+
+  .cerita h2 {
+    font-size: 2rem !important;
+  }
+
+  .cerita p {
+    padding: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6rem;
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .cerita p::first-letter {
+    font-size: 2.5rem;
+    margin-right: 0.4rem;
   }
 
   /* Responsif untuk transisi antar section di mobile */
@@ -2002,6 +2057,27 @@ section {
   .cerita i.bxs-spa,
   .time a + p + i.bxs-spa {
     animation: upAndDown 3s infinite;
+  }
+
+  /* Responsive styling untuk section cerita pada layar kecil */
+  .cerita {
+    padding: 2rem 1rem;
+  }
+
+  .cerita h2 {
+    font-size: 1.6rem !important;
+  }
+
+  .cerita p {
+    padding: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    max-width: 98%;
+  }
+
+  .cerita p::first-letter {
+    font-size: 2rem;
+    margin-right: 0.3rem;
   }
 
   /* Penyesuaian posisi ikon bunga dekoratif di bride_couple */
