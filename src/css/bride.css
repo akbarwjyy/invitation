@@ -147,6 +147,48 @@
   bottom: -15rem;
 }
 
+/* Styling untuk ikon bunga samping yang tidak menimpa teks */
+.bride .bride-side-flower-left,
+.bride .bride-side-flower-right {
+  animation: gentleGlow 3s ease-in-out infinite alternate;
+  opacity: 0.8;
+}
+
+.bride .bride-side-flower-left {
+  transform: rotate(-15deg);
+}
+
+.bride .bride-side-flower-right {
+  transform: rotate(15deg);
+}
+
+/* Animasi gentle glow */
+@keyframes gentleGlow {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(142, 202, 230, 0.3));
+    transform: scale(1) rotate(-15deg);
+  }
+  100% {
+    filter: drop-shadow(0 0 15px rgba(142, 202, 230, 0.6));
+    transform: scale(1.05) rotate(-15deg);
+  }
+}
+
+.bride .bride-side-flower-right {
+  animation-name: gentleGlowRight;
+}
+
+@keyframes gentleGlowRight {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(142, 202, 230, 0.3));
+    transform: scale(1) rotate(15deg);
+  }
+  100% {
+    filter: drop-shadow(0 0 15px rgba(142, 202, 230, 0.6));
+    transform: scale(1.05) rotate(15deg);
+  }
+}
+
 /* Media queries untuk responsive */
 @media (max-width: 768px) {
   .bride {
@@ -240,6 +282,21 @@
 
   .hadist svg:nth-of-type(2) {
     bottom: -10rem;
+  }
+
+  .bride .bride-side-flower-left,
+  .bride .bride-side-flower-right {
+    font-size: 1.5rem;
+  }
+
+  .bride .bride-side-flower-left {
+    top: 3rem;
+    left: 0.5rem;
+  }
+
+  .bride .bride-side-flower-right {
+    top: 5rem;
+    right: 0.5rem;
   }
 }
 
@@ -336,5 +393,40 @@
 
   .hadist svg:nth-of-type(2) {
     bottom: -6rem;
+  }
+
+  .bride .bride-side-flower-left,
+  .bride .bride-side-flower-right {
+    font-size: 1.2rem;
+    opacity: 0.6;
+  }
+
+  .bride .bride-side-flower-left {
+    top: 2rem;
+    left: 0.2rem;
+  }
+
+  .bride .bride-side-flower-right {
+    top: 3.5rem;
+    right: 0.2rem;
+  }
+}
+
+/* Menambahkan padding pada bride_couple untuk memberikan ruang */
+.bride .bride_couple {
+  padding: 1rem 3rem 2rem 3rem;
+  margin: 2rem auto;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .bride .bride_couple {
+    padding: 1rem 2rem 1.5rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bride .bride_couple {
+    padding: 0.5rem 1.5rem 1rem 1.5rem;
   }
 }
