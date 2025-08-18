@@ -111,4 +111,14 @@ export const data = {
       path: "#wishas",
     },
   ],
+
+  location: {
+    address: "Bongsren RT 07, Gilangharjo, Pandak, Bantul",
+    googleMapsUrl:
+      "https://maps.google.com/?q=Bongsren+RT+07,+Gilangharjo,+Pandak,+Bantul",
+    coordinates: {
+      lat: -7.9167, // Koordinat approximate untuk Bantul
+      lng: 110.3333,
+    },
+  },
 };

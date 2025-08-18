@@ -161,8 +161,8 @@ section::after {
     transform: rotate(0deg) translateX(0);
   }
   100% {
-    top: 120%;
-    transform: rotate(360deg) translateX(100px);
+    top: 100vh;
+    transform: rotate(360deg) translateX(50px);
   }
 }
 
@@ -206,19 +206,22 @@ section::after {
   }
   25% {
     top: 20%;
+    left: 25vw;
     transform: translateY(-20px);
   }
   50% {
     top: 40%;
+    left: 50vw;
     transform: translateY(20px);
   }
   75% {
     top: 30%;
+    left: 75vw;
     transform: translateY(0);
   }
   100% {
     top: 35%;
-    left: 120%;
+    left: 100vw;
     transform: translateY(10px);
   }
 }
@@ -1004,6 +1007,37 @@ section::after {
   background-color: #f8f9fa; /* Memberikan background color yang sama dengan transisi */
 }
 
+/* Override untuk section time - memastikan visibility di mobile */
+@media (max-width: 768px) {
+  .time p,
+  .time a {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .time a[href=""] {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+
+  .time a[href=""]:hover {
+    background-color: #5a6268;
+  }
+}
+
+@media (max-width: 480px) {
+  .time * {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .time {
+    min-height: auto !important;
+  }
+}
+
 /* Styling untuk ikon bunga di section bride */
 .bride i.bxs-spa {
   position: absolute;
@@ -1335,146 +1369,123 @@ section::after {
   }
 }
 
-/* ===== SCROLL BOUNDARY FIXES ===== */
-/* Mengatasi masalah scroll tak terbatas dari elemen dekoratif */
-
-/* Container pembatas untuk semua elemen dekoratif */
-html {
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+/* Memastikan tidak ada overlap antara section time dan wishas */
+.time + .wishas {
+  margin-top: 4rem !important;
 }
 
-/* Membatasi animasi dekoratif agar tidak keluar viewport */
-.floating-heart,
-.sparkle,
-.flower-petal,
-.butterfly {
-  max-width: 100vw;
-  max-height: 100vh;
-}
-
-/* Perbaikan animasi fallingPetal */
-@keyframes fallingPetal {
-  0% {
-    top: -20px;
-    transform: rotate(0deg) translateX(0);
-  }
-  100% {
-    top: 100vh;
-    transform: rotate(360deg) translateX(50px);
-  }
-}
-
-/* Perbaikan animasi butterflyFly */
-@keyframes butterflyFly {
-  0% {
-    top: 30%;
-    left: -50px;
-    transform: translateY(0);
-  }
-  25% {
-    top: 20%;
-    left: 25vw;
-    transform: translateY(-20px);
-  }
-  50% {
-    top: 40%;
-    left: 50vw;
-    transform: translateY(20px);
-  }
-  75% {
-    top: 30%;
-    left: 75vw;
-    transform: translateY(0);
-  }
-  100% {
-    top: 35%;
-    left: 100vw;
-    transform: translateY(10px);
-  }
-}
-
-/* Memastikan footer tidak menyebabkan over-scroll */
-footer {
+/* Specific styling untuk alamat agar terlihat jelas */
+.time p:last-of-type {
   position: relative;
-  margin-bottom: 0;
-  padding-bottom: 2rem;
+  z-index: 10;
+  background-color: rgba(248, 249, 250, 0.95) !important;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Membatasi body agar tidak ada scroll berlebihan */
-body {
-  position: relative;
-  width: 100%;
-  max-width: 100vw;
-}
-
-/* ===== OVERRIDE DECORATIVE ELEMENTS POSITIONING ===== */
-/* Memaksa semua elemen dekoratif menggunakan fixed positioning untuk membatasi overflow */
-
-.decorative-container .floating-heart,
-.decorative-container .sparkle,
-.decorative-container .flower-petal,
-.decorative-container .butterfly {
-  position: fixed !important;
-  pointer-events: none !important;
-}
-
-/* Memastikan animasi tidak keluar dari viewport */
-.decorative-container {
-  clip: rect(0, 100vw, 100vh, 0);
-  -webkit-clip-path: inset(0 0 0 0);
-  clip-path: inset(0 0 0 0);
-}
-
-/* Override untuk memastikan ikon bunga samping tidak menimpa teks */
-.bride .bride-side-flower-left,
-.bride .bride-side-flower-right {
-  pointer-events: none;
-  will-change: transform, filter;
-}
-
-/* Memastikan section bride memiliki overflow yang terkontrol */
-.bride {
-  position: relative;
-  overflow-x: hidden;
-  padding-top: 2rem;
-}
-
-/* Media queries untuk responsive ikon bunga samping */
+/* Mobile specific spacing */
 @media (max-width: 768px) {
-  .bride {
-    padding-top: 1.5rem;
+  .time + .wishas {
+    margin-top: 6rem !important;
   }
 
-  .bride .bride-side-flower-left {
-    top: 2.5rem !important;
-    left: 0.3rem !important;
-    font-size: 1.3rem !important;
+  .time {
+    position: relative;
+    z-index: 5;
   }
 
-  .bride .bride-side-flower-right {
-    top: 4rem !important;
-    right: 0.3rem !important;
-    font-size: 1.3rem !important;
+  .time p:last-of-type {
+    margin-bottom: 4rem !important;
+    padding: 1.5rem !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    color: #2c3e50 !important;
+  }
+
+  .wishas {
+    position: relative;
+    z-index: 1;
   }
 }
 
 @media (max-width: 480px) {
-  .bride {
-    padding-top: 1rem;
+  .time + .wishas {
+    margin-top: 8rem !important;
   }
 
-  .bride .bride-side-flower-left {
-    top: 1.5rem !important;
-    left: 0.1rem !important;
-    font-size: 1rem !important;
-    opacity: 0.5 !important;
+  .time p:last-of-type {
+    margin-bottom: 5rem !important;
+    padding: 2rem 1rem !important;
+    border: 2px solid rgba(142, 202, 230, 0.5) !important;
+    background-color: #ffffff !important;
+  }
+}
+
+/* Perbaikan khusus untuk heading Ucapan & Doa */
+.wishas div:nth-of-type(2) h2 {
+  position: relative !important;
+  z-index: 20 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  clear: both;
+  margin-top: 0 !important;
+}
+
+/* Memastikan form tidak overlap dengan heading */
+.wishas div:nth-of-type(2) form {
+  clear: both;
+  position: relative;
+  z-index: 15;
+  margin-top: 2rem !important;
+}
+
+/* Mobile specific fixes */
+@media (max-width: 768px) {
+  .wishas div:nth-of-type(2) {
+    position: relative !important;
+    z-index: 10 !important;
+    overflow: visible !important;
   }
 
-  .bride .bride-side-flower-right {
-    top: 2.5rem !important;
-    right: 0.1rem !important;
-    font-size: 1rem !important;
-    opacity: 0.5 !important;
+  .wishas div:nth-of-type(2) h2 {
+    margin-bottom: 2rem !important;
+    padding: 1.2rem !important;
+    background: linear-gradient(
+      135deg,
+      rgba(142, 202, 230, 0.1) 0%,
+      rgba(142, 202, 230, 0.05) 100%
+    ) !important;
+    border: 1px solid rgba(142, 202, 230, 0.3) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 2px 8px rgba(142, 202, 230, 0.2) !important;
+  }
+
+  .wishas div:nth-of-type(2) form {
+    margin-top: 2.5rem !important;
+    border-top: 1px solid rgba(142, 202, 230, 0.2);
+    padding-top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wishas div:nth-of-type(2) h2 {
+    font-size: 1.3rem !important;
+    padding: 1.5rem 1rem !important;
+    margin: 0 0 3rem 0 !important;
+    line-height: 1.4;
+    font-weight: 600 !important;
+    color: #2c3e50 !important;
+  }
+
+  .wishas div:nth-of-type(2) form {
+    margin-top: 3rem !important;
+  }
+
+  .wishas div:nth-of-type(2) form label {
+    margin-top: 1rem;
+    display: block;
+    clear: both;
   }
 }
