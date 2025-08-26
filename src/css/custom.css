@@ -451,36 +451,58 @@ section::after {
 
 /* ===== ANIMATIONS & DECORATIVE ELEMENTS ===== */
 
-/* Styling untuk ikon bunga spa */
+/* Ornamen gambar di sudut setiap section - mengganti ikon bunga */
+.section-ornaments {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.7;
+  z-index: 5;
+  animation: ornamentFloat 4s ease-in-out infinite;
+}
+
+.section-ornaments.top-left {
+  top: 20px;
+  left: 20px;
+  background-image: url("../assets/images/corner-1.png");
+}
+
+.section-ornaments.top-right {
+  top: 20px;
+  right: 20px;
+  background-image: url("../assets/images/corner-2.png");
+}
+
+.section-ornaments.bottom-left {
+  bottom: 20px;
+  left: 20px;
+  background-image: url("../assets/images/corner-3.png");
+}
+
+.section-ornaments.bottom-right {
+  bottom: 20px;
+  right: 20px;
+  background-image: url("../assets/images/corner-4.png");
+}
+
+@keyframes ornamentFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+  }
+}
+
+/* Sembunyikan ikon bunga lama */
 .hadist i.bxs-spa,
 .cerita i.bxs-spa,
-.time a + p + i.bxs-spa {
-  color: var(--primary-decoration) !important;
-  position: absolute;
-  font-size: 3.5rem;
-  animation: upAndDown 3s infinite, flowerBloom 5s infinite,
-    glowEffect 2s infinite;
-  z-index: 10;
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 5px rgba(142, 202, 230, 0.5));
-}
-
-/* Posisi ikon sama dengan posisi ikon hati sebelumnya */
-.hadist i.bxs-spa {
-  top: 16rem;
-  left: 8rem;
-}
-
-.cerita i.bxs-spa {
-  bottom: 5rem;
-  right: 8rem;
-  animation-delay: 0.5s;
-}
-
-.time a + p + i.bxs-spa {
-  right: 8rem;
-  top: 22rem;
-  animation-delay: 0.3s;
+.time i.bxs-spa {
+  display: none;
 }
 
 /* Glow effect untuk ikon */
@@ -838,9 +860,46 @@ section::after {
   box-shadow: 0 8px 20px rgba(100, 181, 246, 0.6);
 }
 
+/* FOOTER SECTION */
+footer {
+  position: relative;
+  padding: 3rem 1.5rem;
+  margin-bottom: 0;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 0.97);
+  overflow: hidden;
+}
+
 /* Media queries for responsive designs */
 @media (max-width: 768px) {
-  /* Adjust flower icon sizes for small screens */
+  /* Perbesar ornament sizes untuk tablet/mobile */
+  .section-ornaments {
+    width: 90px;
+    height: 90px;
+  }
+
+  .section-ornaments.top-left,
+  .section-ornaments.top-right {
+    top: 20px;
+  }
+
+  .section-ornaments.top-left,
+  .section-ornaments.bottom-left {
+    left: 20px;
+  }
+
+  .section-ornaments.top-right,
+  .section-ornaments.bottom-right {
+    right: 20px;
+  }
+
+  .section-ornaments.bottom-left,
+  .section-ornaments.bottom-right {
+    bottom: 20px;
+  }
+
+  /* Adjust flower icon sizes for small screens - KEEP OLD STYLES */
   .hadist i.bxs-spa,
   .cerita i.bxs-spa,
   .time a + p + i.bxs-spa {
@@ -1323,49 +1382,17 @@ section::after {
   .time {
     padding: 2rem 1rem 6rem;
   }
-} /* Untuk perangkat dengan layar sangat kecil */
+}
 @media (max-width: 480px) {
-  .hadist i.bxs-spa,
-  .cerita i.bxs-spa,
-  .time a + p + i.bxs-spa {
-    font-size: 2rem;
+  /* Perbesar ornaments untuk mobile kecil */
+  .section-ornaments {
+    width: 60px;
+    height: 60px;
   }
 
-  /* Animasi lebih sederhana untuk performa lebih baik di perangkat mobile */
-  .hadist i.bxs-spa,
-  .cerita i.bxs-spa,
-  .time a + p + i.bxs-spa {
-    animation: upAndDown 3s infinite;
-  }
-
-  /* Responsive styling untuk section cerita pada layar kecil */
-  .cerita {
-    padding: 2rem 1rem;
-  }
-
-  .cerita h2 {
-    font-size: 1.6rem !important;
-  }
-
-  .cerita p {
-    padding: 1rem;
-    font-size: 0.9rem;
-    line-height: 1.5rem;
-    max-width: 98%;
-  }
-
-  .cerita p::first-letter {
-    font-size: 2rem;
-    margin-right: 0.3rem;
-  }
-
-  /* Penyesuaian posisi ikon bunga dekoratif di bride_couple */
-  .bride_couple i.bxs-spa:first-of-type {
-    left: 20% !important;
-  }
-
-  .bride_couple i.bxs-spa:nth-of-type(2) {
-    right: 20% !important;
+  /* Simpler animations for better performance */
+  .section-ornaments {
+    animation: ornamentFloat 6s ease-in-out infinite;
   }
 }
 
